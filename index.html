@@ -162,6 +162,51 @@ img{max-width:100%; display:block}
 #logoOverlay .logo{ width:min(70vw, 700px); max-width:700px; filter:drop-shadow(0 20px 80px #0008); opacity:0; transform:scale(.96); transition:opacity .5s ease, transform .6s ease; }
 #logoOverlay.show .logo{ opacity:1; transform:scale(1); }
 #logoOverlay.fade .logo{ opacity:0; filter:blur(2px); transition: opacity .8s ease, filter .8s ease; }
+/* ===== FIX RESPONSIVE DEL BLOQUE NARRATIVO (MÓVIL) ===== */
+@media (max-width: 900px){
+  .panel.narrative-shell{
+    width: auto;
+    max-width: 100%;
+    margin: 0 14px;
+    padding: 18px;
+    transform: none !important;
+  }
+
+  .narrative{
+    width: auto;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 1fr;   /* una sola columna */
+    gap: 16px;
+    align-items: start;
+  }
+
+  .narrative .gap{ display: none; }
+
+  .narrative .prose{ width: auto; }
+
+  .narrative .frame{
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+    border-radius: 14px;
+  }
+  .narrative .frame img{
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  .section .lead{
+    max-width: 40ch;
+    margin: 0 auto 10px;
+  }
+}
+
+@media (max-width: 480px){
+  .prose{ font-size: 18px; }
+  .section .lead{ font-size: 18px; }
+}
 </style>
 </head>
 <body class="gated">
